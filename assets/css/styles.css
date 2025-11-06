@@ -1,0 +1,170 @@
+:root{
+  --brand:#16a34a; --brand-700:#15803d;
+  --bg:#0b0f14; --surface:#121821; --text:#e8eef6; --muted:#9fb0c8; --border:#203040;
+  --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.25); --container:1140px; --gap:1rem;
+}
+body{
+  background:
+    linear-gradient(to bottom, rgba(11,15,20,.55), rgba(11,15,20,.85)),
+    url('assets/img/hero.jpg') center/cover no-repeat fixed; /* change 'fixed' to 'scroll' if you want it to move */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; line-height:1.6; color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
+  background: radial-gradient(900px 600px at 10% -10%, #1a2434 0%, #0b0f14 55%),
+              radial-gradient(600px 400px at 120% 20%, rgba(22,163,74,.12), transparent 60%);
+}
+
+/* Layout helpers */
+.container{max-width:var(--container);margin:0 auto;padding:0 16px}
+.grid{display:grid;gap:var(--gap)}
+.hidden{display:none!important}
+.text-muted{color:var(--muted)}
+.section-title{margin:1rem 0 .5rem 0}
+
+/* Brand */
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand-logo{height:48px;border-radius:8px}
+.brand-name{font-weight:800;font-size:1.25rem;color:var(--brand)}
+
+/* Links & buttons */
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.7rem 1rem;border-radius:12px;
+  border:1px solid var(--border);background:linear-gradient(180deg,#172234,#121b2b);color:var(--text);
+  cursor:pointer;transition:transform .08s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-1px);border-color:#2a3b52}
+.btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-700));border-color:transparent;color:#fff}
+.badge{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.4);font-size:.8rem;color:#bfe9cc}
+
+/* Form elements */
+input,select,textarea{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid var(--border);background:#0f1522;color:var(--text);outline:none}
+input:focus,select:focus,textarea:focus{border-color:#2e4664;box-shadow:0 0 0 3px rgba(22,163,74,.18)}
+
+/* Navbar */
+.navbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(10,12,18,.55);border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.nav{display:flex;gap:.6rem;align-items:center}
+.nav a{padding:.5rem .75rem;border-radius:10px}
+.nav a:hover{background:#131c2b;text-decoration:none}
+.nav a.active{background:#162235}
+
+/* HERO with background image (put your image at assets/img/hero.jpg) */
+./* === Full-screen hero that scrolls with page === */
+.hero{
+  position: relative !important;
+  height: 100vh !important;          /* full screen height */
+  min-height: 520px !important;      /* safety on small laptops */
+  padding: 0 !important;
+
+  background-image:
+    linear-gradient(to bottom, rgba(11,15,20,.55), rgba(11,15,20,.85)),
+    url('../img/hero.jpg') !important;
+  background-size: cover !important;         /* fill the screen */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;  /* <-- scrolls with page */
+}
+
+/* keep content vertically centered inside hero */
+.hero .hero-content{
+  position: relative !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* optional: remove pattern overlay if you see lines/banding */
+.hero .hero-overlay{ display:none !important; }
+
+/* smaller hero on mobile if needed */
+@media (max-width: 640px){
+  .hero{ height: 70vh !important; min-height: 420px !important; }
+}
+
+.hero .hero-overlay{
+  position:absolute; inset:0;
+  background-image: url('../img/pattern.png');
+  opacity:.15; pointer-events:none;
+}
+.hero-content{position:relative}
+.hero h1{font-size:clamp(2rem,1rem + 3vw,3.2rem);margin:0 0 .5rem}
+.hero p{color:var(--muted);max-width:60ch}
+.searchbar{display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:.5rem;padding:.6rem;background:#0e1522;border:1px solid var(--border);border-radius:14px;margin-top:1rem}
+/* Cards / listings */
+.listings{grid-template-columns:repeat(3,1fr)}
+.card{background:linear-gradient(180deg,#121a29,#0e1522);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.card .media{aspect-ratio:16/10;overflow:hidden;background:#0c1220;display:grid;place-items:center;color:#9fb0c8}
+.card .body{padding:1rem}
+.price{font-weight:800}
+.price s{opacity:.65;margin-right:.4rem}
+.meta{display:flex;gap:.75rem;flex-wrap:wrap;color:#9fb0c8;font-size:.95rem}
+
+/* Panels & contact */
+.panel{padding:1rem;border:1px solid var(--border);border-radius:14px;background:#0f1522}
+.contact{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+.map-embed{margin-top:1rem;border-radius:12px;overflow:hidden}
+
+/* Footer */
+footer{margin-top:3rem;border-top:1px solid var(--border);padding:2rem 0;color:#9fb0c8}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;z-index:60;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* Responsive */
+@media (max-width:1024px){
+  .searchbar{grid-template-columns:1fr 1fr 1fr}
+  .listings{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .hero.hero {
+  position: relative;
+  padding: 100px 0 60px;
+  background:
+    linear-gradient(to bottom, rgba(11,15,20,.55), rgba(11,15,20,.85)),
+    url('../img/hero.jpg') center center / cover no-repeat;
+  background-attachment: fixed; /* keeps it still when scrolling */
+}
+
+.hero .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('../img/pattern.png'); /* optional overlay pattern */
+  opacity: 0.15;
+  pointer-events: none;
+}/* === Hero background fix === */
+.hero {
+  position: relative;
+  padding: 60px 0 50px;          /* reduces height of banner */
+  min-height: 400px;             /* sets proper height */
+  background-image:
+    linear-gradient(to bottom, rgba(11,15,20,.55), rgba(11,15,20,.85)),
+    url('../img/hero.jpg');      /* path to your hero image */
+  background-size: cover;      /* 👈 this shows full image */
+  background-position: center;   /* centers image */
+  background-repeat: no-repeat;  /* no repeat */
+  background-color: #0b0f14;     /* adds background behind image */
+/* === FORCE HERO BACKGROUND FIX === */
+.hero {
+  position: relative !important;
+  padding: 70px 0 60px !important;
+  min-height: 380px !important;
+  background-image:
+    linear-gradient(to bottom, rgba(11,15,20,.55), rgba(11,15,20,.85)),
+    url('../img/hero.jpg') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0b0f14 !important;
+}
+.hero .hero-overlay {
+  display: none !important;
+}
+
