@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Raju Ventures</title>
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="inner container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Raju Ventures Logo" class="brand-logo">
+        <span class="brand-name">Raju Ventures</span>
+      </a>
+      <nav class="nav">
+        <a href="listings.html">Listings</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container" style="max-width:520px;margin-top:2rem;">
+    <div class="panel">
+      <h2>Welcome back</h2>
+      <p class="text-muted">Login to unlock your member benefit: <strong>1% discount</strong> on listed prices.</p>
+      <form id="loginForm">
+        <label>Email <input type="email" name="email" required /></label>
+        <label style="margin-top:.75rem;">Password <input type="password" name="password" required /></label>
+        <button class="btn btn-primary" style="margin-top:1rem;" type="submit">Login</button>
+        <p id="loginStatus" class="text-muted" style="margin-top:.5rem;"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 Raju Ventures.</div>
+  </footer>
+
+  <script src="assets/js/auth.js"></script>
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const email = fd.get('email');
+      const password = fd.get('password');
+      if (email && password) {
+        Auth.login(email);
+        document.getElementById('loginStatus').textContent = 'Logged in. Redirecting...';
+        setTimeout(() => window.location.href = 'listings.html', 700);
+      } else {
+        document.getElementById('loginStatus').textContent = 'Invalid credentials.';
+      }
+    });
+  </script>
+</body>
+</html>
