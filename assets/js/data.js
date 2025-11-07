@@ -1,17 +1,14 @@
-// Replace images/fields with your real data.
-// Keep price as a NUMBER (no commas).
+// Simple demo data. Make sure these images exist in assets/img/
 const LANDS = [
   {
     id: 1,
     title: "Residential Plot — Ramachandrapuram",
     type: "Residential Plot",
-    price: 3200000, // 32,00,000
+    price: 3200000,             // 32,00,000
     size: "220 sqyd",
     location: "Ramachandrapuram, AP",
     facing: "East",
-    images: ["assets/img/land1.jpg"],
-    lat: 16.82543029619547,
-    lng: 82.0415626516201
+    images: ["assets/img/land1.jpg"]
   },
   {
     id: 2,
