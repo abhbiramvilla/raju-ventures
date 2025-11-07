@@ -25,18 +25,28 @@
 
   <section class="container" style="margin-top:1rem;">
     <div class="contact">
-      <form class="panel" id="contactForm">
-        <h2>Get in touch</h2>
-        <label>Full Name <input name="name" required /></label>
-        <label style="margin-top:.75rem;">Email <input type="email" name="email" required /></label>
-        <label style="margin-top:.75rem;">Phone <input name="phone" required value="+91 99855 74879"/></label>
-        <label style="margin-top:.75rem;">Message <textarea name="msg" rows="4" placeholder="I am interested in ..." required></textarea></label>
-        <button class="btn btn-primary" style="margin-top:1rem">Send</button>
-        <a class="btn" style="margin-top:.75rem"
-           href="https://wa.me/919985574879?text=Hi%20Raju%20Ventures%2C%20I%20want%20to%20discuss%20land%20in%20Ramachandrapuram."
-           target="_blank" rel="noopener">Chat on WhatsApp</a>
-        <p id="contactStatus" class="text-muted" style="margin-top:.5rem;"></p>
-      </form>
+     <form class="panel" action="https://api.web3forms.com/submit" method="POST">
+  <!-- Your Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="2cfa7e5e-e492-4fea-9cde-5efece26b4f7">
+  
+  <!-- Email Subject -->
+  <input type="hidden" name="subject" value="New Enquiry from Raju Ventures">
+
+  <!-- Redirect after success -->
+  <input type="hidden" name="redirect" value="thankyou.html">
+
+  <h2>Get in touch</h2>
+  <label>Full Name <input name="name" required></label>
+  <label>Email <input type="email" name="email" required></label>
+  <label>Phone <input name="phone" required value="+91 99855 74879"></label>
+  <label>Message <textarea name="message" rows="4" placeholder="I am interested in ..." required></textarea></label>
+
+  <button class="btn btn-primary" style="margin-top:1rem">Send</button>
+</form>
+<p class="text-muted">Or call us at <a href="tel:+919985574879">+91 99855 74879</a></p>
+
+<p class="text-muted">Or call us at <a href="tel:+919985574879">+91 99855 74879</a></p>
+
   <div class="panel">
   <h3>Office</h3>
   <p>Raju Ventures<br/>Ramachandrapuram, Andhra Pradesh</p>
@@ -85,3 +95,4 @@
   </script>
 </body>
 </html>
+
