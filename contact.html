@@ -1,98 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Raju Ventures</title>
-  <link rel="icon" href="assets/img/logo.png" type="image/png" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- SEO -->
+  <meta name="description" content="Contact Raju Ventures for verified residential, commercial, and farm land around Ramachandrapuram. Call +91 99855 74879 or WhatsApp us.">
+  <meta property="og:title" content="Raju Ventures — Contact">
+  <meta property="og:description" content="Call or WhatsApp for verified land listings.">
+  <meta property="og:image" content="assets/img/hero.jpg">
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="inner container">
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo.png" alt="Raju Ventures Logo" class="brand-logo">
-        <span class="brand-name">Raju Ventures</span>
-      </a>
-      <nav class="nav">
-        <a href="listings.html">Listings</a>
-        <a class="active" href="contact.html">Contact</a>
-        <span id="memberBadge" class="badge hidden">Member: 1% off</span>
-        <a id="authLink" class="btn btn-primary" href="login.html">Login</a>
-      </nav>
-    </div>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Raju Ventures</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="container" style="margin-top:1rem;">
-    <div class="contact">
-     <form class="panel" action="https://api.web3forms.com/submit" method="POST">
-  <!-- Your Web3Forms Access Key -->
-  <input type="hidden" name="access_key" value="2cfa7e5e-e492-4fea-9cde-5efece26b4f7">
-  
-  <!-- Email Subject -->
-  <input type="hidden" name="subject" value="New Enquiry from Raju Ventures">
+  <!-- Contact Section -->
+  <section class="container" style="margin-top: 2rem">
+    <div class="panel">
+      <h2>Get in touch</h2>
+      <p>Have a question or want to schedule a visit? We’d love to hear from you!</p>
 
-  <!-- Redirect after success -->
-  <input type="hidden" name="redirect" value="thankyou.html">
+      <!-- Web3Forms contact form -->
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Your personal access key -->
+        <input type="hidden" name="access_key" value="2cfa7e5e-e492-4fea-9cde-5efece26b4f7">
+        <!-- Email subject -->
+        <input type="hidden" name="subject" value="New Enquiry — Raju Ventures">
+        <!-- Redirect page -->
+        <input type="hidden" name="redirect" value="thankyou.html">
+        <!-- Spam protection -->
+        <input type="checkbox" name="botcheck" style="display:none">
 
-  <h2>Get in touch</h2>
-  <label>Full Name <input name="name" required></label>
-  <label>Email <input type="email" name="email" required></label>
-  <label>Phone <input name="phone" required value="+91 99855 74879"></label>
-  <label>Message <textarea name="message" rows="4" placeholder="I am interested in ..." required></textarea></label>
+        <label>Full Name <input name="name" required></label>
+        <label style="margin-top:.75rem;">Email <input type="email" name="email" required></label>
+        <label style="margin-top:.75rem;">Phone <input name="phone" required></label>
+        <label style="margin-top:.75rem;">Message
+          <textarea name="message" rows="4" placeholder="I’m interested in a property…" required></textarea>
+        </label>
 
-  <button class="btn btn-primary" style="margin-top:1rem">Send</button>
-</form>
-<p class="text-muted">Or call us at <a href="tel:+919985574879">+91 99855 74879</a></p>
+        <button class="btn btn-primary" style="margin-top:1rem;">Send Enquiry</button>
+      </form>
 
-<p class="text-muted">Or call us at <a href="tel:+919985574879">+91 99855 74879</a></p>
+      <div style="margin-top:1.5rem;">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> <a href="tel:+919985574879">+91 99855 74879</a></p>
+        <p><strong>Email:</strong> <a href="mailto:villalovaraju@gmail.com">villalovaraju@gmail.com</a></p>
+        <a class="btn" style="margin-top:.75rem;" target="_blank" rel="noopener"
+          href="https://wa.me/919985574879?text=Hi%20Raju%20Ventures%2C%20I%20want%20to%20discuss%20land%20in%20Ramachandrapuram.">
+          Chat on WhatsApp
+        </a>
+      </div>
 
-  <div class="panel">
-  <h3>Office</h3>
-  <p>Raju Ventures<br/>Ramachandrapuram, Andhra Pradesh</p>
-  <p><strong>Phone:</strong> <a href="tel:+919985574879">+91 99855 74879</a><br/>
-  <strong>Email:</strong> <a href="mailto:villalovaraju@gmail.com">villalovaraju@gmail.com</a></p>
+      <div style="margin-top:2rem;">
+        <h3>Our Office</h3>
+        <p>Raju Ventures, Ramachandrapuram, Andhra Pradesh</p>
+        <iframe
+          src="https://www.google.com/maps?q=16.82543029619547,82.0415626516201&z=14&output=embed"
+          width="100%" height="260" style="border:0;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
 
-  <!-- Map embed -->
-  <div class="map-embed">
-    <iframe
-      src="https://www.google.com/maps?q=16.82543029619547,82.0415626516201&z=14&output=embed"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-
-  <!-- Optional "View on Google Maps" button -->
-  <a class="btn" style="margin-top:0.75rem;"
-     href="https://maps.google.com/?q=16.82543029619547,82.0415626516201"
-     target="_blank" rel="noopener">
-    View on Google Maps
-  </a>
-</div>
-
-
-  <footer>
-    <div class="container">© 2025 Raju Ventures.</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Raju Ventures. All Rights Reserved.</p>
   </footer>
-
-  <a id="waFloat" class="wa-float"
-     href="https://wa.me/919985574879?text=Hi%20Raju%20Ventures%2C%20I%27m%20interested%20in%20land."
-     target="_blank" aria-label="Chat on WhatsApp" rel="noopener">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M19.1 17.2c-.2-.1-1-.5-1.1-.6-.1-.1-.2-.1-.3 0s-.6.2-.7.2-.2 0-.3-.1-.6-.2-1.1-.7-1-1.2-1.1-1.3 0-.2.1-.3.2-.3.2-.4 0-.2 0-.3 0-.3-.1-.5c-.1-.2-.5-.5-.7-.6s-.4-.1-.6 0h0c-.2.1-.5.5-.6 1-.1.5 0 1 .1 1.2.2.6.7 1.2 1 1.6.4.4.8.9 1.5 1.2.7.4 1.2.5 1.6.6.7.2 1.3.1 1.8.1.6-.1 1-.5 1.1-1 .1-.5.1-.9 0-.9zM16 4a12 12 0 0 0-10.4 18l-1.1 4.1 4.2-1.1A12 12 0 1 0 16 4zm0 2a10 10 0 0 1 7.4 16.8l-.4.4A9.9 9.9 0 0 1 8.8 23l-.5-.3A10 10 0 0 1 16 6z"/>
-    </svg>
-  </a>
-
-  <script src="assets/js/auth.js"></script>
-  <script>
-    initNavbar && initNavbar();
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const name = new FormData(form).get('name');
-      document.getElementById('contactStatus').textContent = `Thanks, ${name}! We'll contact you soon.`;
-      form.reset();
-    });
-  </script>
 </body>
 </html>
-
